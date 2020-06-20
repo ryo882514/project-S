@@ -1,9 +1,12 @@
 #include "DxLib.h"
 #include "game.h"
+
+#define SIZE_X 700
+#define SIZE_Y 600
+
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
-	int SetUse3DFlag(int Flag);
 	ChangeWindowMode(TRUE); // ウィンドウモードに設定
-	SetGraphMode(700, 600, 32); // ウィンドウサイズ指定
+	SetGraphMode(SIZE_X,SIZE_Y, 32); // ウィンドウサイズ指定
 	SetDrawScreen(DX_SCREEN_BACK);
 
 	// DxLib初期化処理

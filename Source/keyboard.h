@@ -2,13 +2,10 @@
 #define _KEYBOARD_H_
 
 /*---変数を定義する場所---*/
-static int Key[256];
-static char String[2];
-static char InputChar;
+static int key[256];
+static char tmpKey[256]; // 現在のキーの入力状態を格納する
 
 /*---関数を定義する場所---*/
- int Keyboard_Draw();
  int UpdateKey();
- int Draw_Input_Char();
-
+ int Key(int KeyCode);
 #endif // !_KEYBORAD_H_

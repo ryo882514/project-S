@@ -1,5 +1,9 @@
 #include "DxLib.h"
 #include "game.h"
+
+#define SIZE_X 700
+#define SIZE_Y 600
+
 void game_test() 
 {
 	// èâä˙âª
@@ -10,7 +14,7 @@ void game_test()
 	}
 
 	// â~Çï`âÊ
-	DrawOval(x, y, r, r, RGB(11, 45, 14), TRUE);
+	DrawOval(x-320, y, r, r, RGB(11, 45, 14), TRUE);
 
 	// ë»â~Çï`âÊ
 	DrawOval(ex, ey, er, er, RGB(36, 43, 64), TRUE);
@@ -40,13 +44,13 @@ void game_test()
 	{
 		DrawFormatString(0, 100, GetColor(255, 255, 255), "åüímíÜ");
 	}
-
+	DrawFormatString(0, 300, GetColor(255, 255, 255), "%d%d",x,y);
 }
 
 void game_init()
 {
-	x = 0;
-	y = 0;
+	x = SIZE_X/2;
+	y = SIZE_Y/2;
 	r = 50;
 
 	ex = 200;
