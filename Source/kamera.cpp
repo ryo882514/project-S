@@ -12,7 +12,7 @@ int MapDrawPointX, MapDrawPointY;		// 描画するマップ座標値
 int DrawMapChipNumX, DrawMapChipNumY;	// 描画サイズ
 int Mouse;
 // マップとプレイヤーの描画関数
-void GraphDraw(void)
+void GraphDraw()
 {
 	//描画するマップサイズ
 	DrawMapChipNumX = 700/ Magnification;

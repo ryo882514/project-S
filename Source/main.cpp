@@ -16,11 +16,9 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 		return -1;
 	}
 	//メインループ
-	while (ScreenFlip() == 0 && ProcessMessage() == 0 && ClearDrawScreen() == 0) 
+	while (ScreenFlip() == 0 && ProcessMessage() == 0 && ClearDrawScreen() == 0&& UpdateKey() == 0)
 	{
-
 		game_test();
-		Keyboard_Draw();
 	}
 
 	DxLib_End();    // DXライブラリ終了処理
