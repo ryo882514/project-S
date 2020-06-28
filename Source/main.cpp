@@ -1,8 +1,8 @@
 #include "DxLib.h"
 #include "game.h"
-
-#define SIZE_X 700
-#define SIZE_Y 600
+#include "keyboard.h"
+#define SIZE_X 1000
+#define SIZE_Y 800
 
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 	ChangeWindowMode(TRUE); // ウィンドウモードに設定

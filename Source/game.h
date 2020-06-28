@@ -1,9 +1,7 @@
 #ifndef _GAME_H_
 #define _GAME_H_
 
-#include "keyboard.h"
 /*---変数を定義する場所---*/
-
 static bool flg;  // 初期化フラグ用
 
 /*---関数を定義する場所---*/
