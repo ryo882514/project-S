@@ -9,4 +9,5 @@ static bool flg;  // ‰Šú‰»ƒtƒ‰ƒO—p
 void game_init();
 void game_test();
 
+
 #endif // !_GAME_H_

@@ -14,7 +14,7 @@ extern float bx[13], by[13];
 static float vx[13], vy[13];
 static float s;
 static int limit;
-extern bool bflag[13];
+extern bool bflag[130];
 static bool Player_Initflg = false;
 
 /*---ŠÖ”‚ğ’è‹`‚·‚éêŠ---*/

@@ -80,33 +80,21 @@ void Bullet()
 void GraphDraw()
 {
     // キー入力に応じてプレイヤーの座標を移動
-	if (Key(KEY_INPUT_A) <= 1)PlayerX += 1;
+	if (Key(KEY_INPUT_A) <= 1) PlayerX += 1;
 	if (Key(KEY_INPUT_D) <= 1) PlayerX -= 1;
 	if (Key(KEY_INPUT_W) <= 1) PlayerY += 1;
 	if (Key(KEY_INPUT_S) <= 1) PlayerY -= 1;
 	// マウスを追いかけるように移動
 	if (Mouse && MOUSE_INPUT_LEFT)
 	{
-		if (MouseX+400 >= 400 - Player_Size) PlayerX += 1, DrawFormatString(0, 525, GetColor(255, 255, 255), "右");
-		if (MouseX+400 <= 400 + Player_Size) PlayerX -= 1, DrawFormatString(0, 525, GetColor(255, 255, 255), "左");
-		if (MouseY+350 >= 350 - Player_Size) PlayerY += 1, DrawFormatString(0, 550, GetColor(255, 255, 255), "下");
-		if (MouseY+350 <= 350 + Player_Size) PlayerY -= 1, DrawFormatString(0, 550, GetColor(255, 255, 255), "上");
+		if (MouseX+400 >= 400 - Player_Size) PlayerX += 1;
+		if (MouseX+400 <= 400 + Player_Size) PlayerX -= 1;
+		if (MouseY+350 >= 350 - Player_Size) PlayerY += 1;
+		if (MouseY+350 <= 350 + Player_Size) PlayerY -= 1;
 	}
 
-	// ゲーム画面境界線の描画
-	DrawBox(0, 0, 800, 700,GetColor(255, 0, 0), FALSE);
-
-	// 境界線の描画
-	DrawBox(-1000 - MapDrawPointX, -1000 - MapDrawPointY,
-		     1000 - MapDrawPointX + 1, 1000 - MapDrawPointY + 1,
-		     GetColor(255, 0, 0), FALSE);
-	
 	// プレイヤーの描画
 	DrawBox(PlayerX - MapDrawPointX, PlayerY - MapDrawPointY,
 		    PlayerX + Player_Size - MapDrawPointX + 1,PlayerY + Player_Size - MapDrawPointY + 1,
 		    GetColor(0, 255, 0), TRUE);
-
-	DrawFormatString(0, 400, GetColor(255, 255, 255), "PlayerMAP:%d,%d", MapDrawPointX, MapDrawPointY);
-	DrawFormatString(0, 300, GetColor(255, 255, 255), "Player:%d,%d", PlayerX, PlayerY);
-	DrawFormatString(0, 50, GetColor(255, 255, 255), "Mouse:%d,%d", MouseX, MouseY);
 }

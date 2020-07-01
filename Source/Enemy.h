@@ -5,8 +5,12 @@
 #include "keyboard.h"
 
 /*---•Ï”‚ğ’è‹`‚·‚éêŠ---*/
-extern int EnemyX,EnemyY;
-extern int Enemy_Size;
+extern float EnemyX[100],EnemyY[100];
+extern int Enemy_Size[100];
+extern int E_HP[100];
+extern bool E_Flg[100];
+extern bool Rest_E_Flg[100];
+extern int Rest_E;
 static int cnt;
 static bool EnemyInitFlg = false;
 

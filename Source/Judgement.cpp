@@ -2,31 +2,39 @@
 
 void Judgement()
 {
-	if (PlayerX +Player_Size    >= EnemyX &&
-		PlayerX + 1 <= EnemyX + Enemy_Size &&
-		PlayerY + Player_Size >= EnemyY  &&
-		PlayerY + 1 <= EnemyY + Enemy_Size )
-	{
-		DrawFormatString(0, 150, GetColor(255, 255, 255), "Mouswedwqerfhgwd");
-	}
-	for (int i = 0; i < 13; i++)
-	{
 
-		if (bx[i] + 5 >= EnemyX - MapDrawPointX &&
-			bx[i] + 1 <= EnemyX + Enemy_Size - MapDrawPointX &&
-			by[i] + 5 >= EnemyY - MapDrawPointY &&
-			by[i] + 1 <= EnemyY + Enemy_Size - MapDrawPointY &&
-			bflag[i] == true)
+	for (int i = 0; i < 100; i++)
+	{
+		if (PlayerX + Player_Size >= EnemyX[i] &&
+			PlayerX + 1 <= EnemyX[i] + Enemy_Size[i] &&
+			PlayerY + Player_Size >= EnemyY[i] &&
+			PlayerY + 1 <= EnemyY[i] + Enemy_Size[i])
 		{
-			Enemy_Size -= 1;
-			if (Enemy_Size == 0)
-			{
-				Enemy_Size = -1;
-			}
-			DrawFormatString(0, i * 20 + 150, GetColor(255, 255, 255), "%d‚ª“–‚½‚Á‚½", i);
+			DrawFormatString(0, 150, GetColor(255, 255, 255), "Mouswedwqerfhgwd");
 		}
-		DrawFormatString(0, 550+i*20, GetColor(255, 255, 255), "tama%f", bx[i]);
+		for (int j = 0; j < 13; j++)
+		{
+
+			if (bx[j] + 5 >= EnemyX[i] - MapDrawPointX &&
+				bx[j] + 1 <= EnemyX[i] + Enemy_Size[i] - MapDrawPointX &&
+				by[j] + 5 >= EnemyY[i] - MapDrawPointY &&
+				by[j] + 1 <= EnemyY[i] + Enemy_Size[i] - MapDrawPointY &&
+				bflag[j] == true && E_Flg[i] == true)
+			{
+				Enemy_Size[i] -= 10;
+				bflag[j] = false;
+				if (Enemy_Size[i] <= 0 )
+				{
+					E_Flg[i] = false;
+					Enemy_Size[i] = -1;
+				}
+				DrawFormatString(0, j * 20 + 150, GetColor(255, 255, 255), "%d‚ª“–‚½‚Á‚½", j);
+			}
+			if (Rest_E_Flg[i] == true && Enemy_Size[i] <= 0)
+			{
+				Rest_E_Flg[i] = false;
+				Rest_E -= 1;
+			}
+		}
 	}
-	DrawFormatString(0, 350, GetColor(255, 255, 255), "zibun%d", PlayerX - MapDrawPointX);
-	DrawFormatString(0, 450, GetColor(255, 255, 255), "teki%d", EnemyX - MapDrawPointX);
 }
